@@ -1,0 +1,94 @@
+\documentclass[a4paper,12pt,oneside, bibliography=totoc]{scrartcl}
+
+% ------ Schrift und -kodierung & Sprache ------
+\usepackage[TS1,T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fourier,erewhon}
+\usepackage[german]{babel}
+
+% ------ Mathe & Tabellen & Grafiken ------
+\usepackage{amsmath, amssymb}
+
+\usepackage{array, booktabs, longtable}
+\usepackage{tabularx}
+
+\usepackage{graphicx}
+\usepackage[x11names, table]{xcolor}
+
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage[htt]{hyphenat} %damit texttt noch Linebreaks mit Silbentrennung erzeugt
+\newcommand{\code}[1]{\texttt{#1}} %Programmcode im Textfluss in passendem Font ausgeben
+
+\usepackage{float} 
+\usepackage{pbox}
+\usepackage{algorithm}
+\usepackage{siunitx}
+
+ 
+% ------ Abbildungen & Ablürzungen ------
+\usepackage[printonlyused]{acronym}
+\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage[page, title, titletoc, header]{appendix}
+
+   
+% ----- Literatur ------
+\usepackage{csquotes}
+\usepackage[
+   backend=biber,
+   sorting= none,
+   firstinits=true,
+   date=long,
+   urldate=long
+]{biblatex}
+\addbibresource{literatur1.bib}
+
+% ------ Hyperlinks ------
+\usepackage[]{hyperref}
+\usepackage{cleveref}
+
+
+% ------ Zeitplan ------
+\newcommand{\foo}{\color{Firebrick3}\raisebox{-0.2ex}{\scalebox{1.5}{\textbullet}}\hskip -4pt\vrule width 1pt\hspace{\labelsep}}
+
+\newcommand{\bfoo}{\raisebox{2.1ex}[0pt]{\makebox[\dimexpr2\tabcolsep]%
+	{\color{Firebrick3}\tiny\textbullet}}}%
+\newcommand{\tfoo}{\makebox[\dimexpr2\tabcolsep]%
+	{\color{Firebrick3}\scalebox{1.8}{$\downarrow$}\hskip 0.9pt }}
+
+% https://markov.htwsaar.de/tex-archive/macros/latex/contrib/xcolor/xcolor.pdf	
+% https://tex.stackexchange.com/questions/196794/how-can-you-create-a-vertical-timeline
+% https://tex.stackexchange.com/questions/466452/margin-in-title-page
+
+
+
+\begin{document}
+
+	\titlehead{
+	\begin{flushleft}
+	   \vspace{-2.0cm}
+	   \includegraphics[width=5cm]{figures/logo.png}\\
+	   \smallskip
+	   \hrule
+	   \vspace{0.04cm}\hspace*{2cm} Institute of Computer Science,    Computer Engineering Group \par
+	   \vspace{0.06cm}\hrule
+	\end{flushleft}
+	}
+
+	\subject{Expos\'e einer Bachelorthesis}
+	\title{\vspace{-0.8cm} Titel}
+	\author{Name Vorname,  Matrikelnr: 1000000}
+	\date{\today}
+	%Advisor:  \\ %Deutsch: Erstebetreuer
+	%Co-Advisor:  %Deutsch: Zweitbetreuer
+
+	\maketitle
+	
+	\input{inhalt}
+	\input{acronyms.tex}
+
+	%Prints references
+	\printbibliography
+\end{document}
+
